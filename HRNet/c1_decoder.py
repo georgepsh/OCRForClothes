@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch._utils
-from HRNet.batchnorm import SynchronizedBatchNorm2d
+from OCRForClothes.HRNet.batchnorm import SynchronizedBatchNorm2d
 
 import warnings
 warnings.filterwarnings("ignore")

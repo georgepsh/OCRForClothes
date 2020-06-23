@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch
 import math
-from HRNet.batchnorm import SynchronizedBatchNorm2d
+from OCRForClothes.HRNet.batchnorm import SynchronizedBatchNorm2d
 import torch.nn.functional as F
 BatchNorm2d = SynchronizedBatchNorm2d
 

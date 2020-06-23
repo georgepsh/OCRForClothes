@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch
-from HRNet.OCR import SpatialGather_Module, SpatialOCR_Module
-from HRNet.batchnorm import SynchronizedBatchNorm2d
+from OCRForClothes.HRNet.OCR import SpatialGather_Module, SpatialOCR_Module
+from OCRForClothes.HRNet.batchnorm import SynchronizedBatchNorm2d
 BatchNorm2d = SynchronizedBatchNorm2d
 
 class EncoderDecoder(nn.Module):

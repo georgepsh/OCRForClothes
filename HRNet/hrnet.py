@@ -7,7 +7,7 @@ import logging
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from HRNet.batchnorm import SynchronizedBatchNorm2d
+from OCRForClothes.HRNet.batchnorm import SynchronizedBatchNorm2d
 
 BatchNorm2d = SynchronizedBatchNorm2d
 BN_MOMENTUM = 0.1

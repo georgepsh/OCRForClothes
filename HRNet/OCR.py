@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch._utils
 import torch.nn.functional as F
-from HRNet.batchnorm import SynchronizedBatchNorm2d
+from OCRForClothes.HRNet.batchnorm import SynchronizedBatchNorm2d
 BatchNorm2d = SynchronizedBatchNorm2d
 
 import warnings
