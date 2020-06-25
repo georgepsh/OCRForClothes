@@ -69,3 +69,24 @@ class Resnet_OCR(nn.Module):
         out_aux_seg.append(out)
         self.use_softmax = False
         return out_aux_seg
+
+
+class Baseline(nn.Module):
+    def __init__(self, encoder, decoder, size):
+            super(Baseline, self).__init__()
+            self.EncoderDecoder = EncoderDecoder(encoder, decoder)
+            self.size = size
+            self.use_softmax = False   
+    def forward(self, x, ocr=True, segSize=False):
+        if segSize:
+            self.use_softmax = True
+        out_aux = self.EncoderDecoder(x, ocr, segSize)
+
+        if self.use_softmax:  # is True during inference
+            out_aux = nn.functional.interpolate(
+                out_aux, size=segSize, mode='bilinear', align_corners=False)
+            out_aux = nn.functional.softmax(out_aux, dim=1)
+        else:
+            out_aux = nn.functional.log_softmax(out_aux, dim=1)
+        
+        return out_aux
